@@ -1,15 +1,5 @@
 """
-Extras done: 4
-- Store your translations in a file named pirate.dat 
-The file should have lines in the form “word:translation."
-
-- Handle upper and lower case and/or punctuation
-
-- Have an option to translate different languages.
-
-- Try to tackle more advanced translations like converting parts of
-words rather than straight substitutions or inserting pirate phrases
-at appropriate points in your document.
+Reads in a dictionary for pirate speech and Shakespearean text, then translates them to contemporary English
 """
 import re
 pirate_dict = {}
@@ -31,6 +21,10 @@ story = []
 story2 = []
 storyline = story_file.read().split()
 storyline2 = storyline
+
+"""
+first story is for pirate speech
+"""
 for word in storyline:
   include = False
   if word[-1] in punctuation:
@@ -58,6 +52,9 @@ story = ''.join([i.capitalize() for i in rtn])
 for word in capitalize_nouns:
   story = story.replace(word,word.capitalize())
 
+"""
+second story is for Shakespearean text
+"""
 for word in storyline2:
   include = False
   if word[-1] in punctuation:
